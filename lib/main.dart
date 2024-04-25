@@ -15,11 +15,11 @@ class MyApp extends StatelessWidget {
       title: 'Soko V2 Flutter App',
       theme: ThemeData.dark().copyWith(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color.fromARGB(255, 147, 229, 250),
+          seedColor: const Color.fromARGB(255, 255, 0, 128),
           brightness: Brightness.dark,
-          surface: const Color.fromARGB(255, 42, 51, 59),
+          surface: const Color.fromARGB(255, 244, 195, 195),
         ),
-        scaffoldBackgroundColor: const Color.fromARGB(255, 50, 58, 60),
+        scaffoldBackgroundColor: const Color.fromARGB(255, 255, 0, 128),
       ),
       home: const SplashScreen(),
     );
