@@ -19,7 +19,7 @@ class SplashScreen extends StatelessWidget {
           tileMode: TileMode.clamp      ),
     ),
         ),
-  Center(
+  const Center(
       child: CircleAvatar(
         radius: 150.0,
         backgroundImage: AssetImage('lib/assets/SOKO-final logo.png'),
