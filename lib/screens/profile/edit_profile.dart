@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:soko_v2/screens/profile/edit_email.dart';
+import 'package:soko_v2/screens/profile/edit_name.dart';
 
 class EditProfileScreen extends StatelessWidget {
   final String name;
@@ -63,7 +65,11 @@ class EditProfileScreen extends StatelessWidget {
               trailing: IconButton(
                 icon: const Icon(Icons.edit),
                 onPressed: () {
-                  // Add logic for editing name
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => EditNameScreen(fullName: name),
+                      ));
                 },
               ),
             ),
@@ -85,7 +91,11 @@ class EditProfileScreen extends StatelessWidget {
               trailing: IconButton(
                 icon: const Icon(Icons.edit),
                 onPressed: () {
-                  // Add logic for editing email
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => EditEmailScreen(email: email),
+                      ));
                 },
               ),
             ),
