@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:soko_v2/screens/verification/sign_in.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:soko_v2/screens/verification/splash_screen.dart';
 import 'firebase_options.dart';
 
 MaterialColor createMaterialColor(Color color) {
@@ -45,10 +45,6 @@ class MyApp extends StatelessWidget {
           secondary: const Color(0xFFF4C3C3),
         ),
         textTheme: TextTheme(
-          bodyMedium: GoogleFonts.robotoSerif(
-            fontSize: 16, // default body text size
-            fontWeight: FontWeight.normal,
-          ),
           displayLarge: GoogleFonts.besley(
             fontSize: 48.8,
             fontWeight: FontWeight.bold,
@@ -73,16 +69,26 @@ class MyApp extends StatelessWidget {
             fontSize: 16,
             fontWeight: FontWeight.bold,
           ),
+          bodyLarge: GoogleFonts.robotoSerif(
+            fontSize: 24,
+          ),
+          bodyMedium: GoogleFonts.robotoSerif(
+            fontSize: 16, // default body text size
+            fontWeight: FontWeight.normal,
+          ),
           bodySmall: GoogleFonts.robotoSerif(
-            fontSize: 12.8,
+            fontSize: 12,
           ),
           labelLarge: GoogleFonts.robotoSerif(
             fontWeight: FontWeight.bold,
           ),
         ),
+        iconTheme: const IconThemeData(
+          color: Color(0xFFF4C3C3),
+        ),
         scaffoldBackgroundColor: const Color(0xFFF6F5FF),
       ),
-      home: const SignInScreen(),
+      home: const SplashScreen(),
     );
   }
 }
