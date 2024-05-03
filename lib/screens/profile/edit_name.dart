@@ -82,11 +82,8 @@ class _EditNameScreenState extends State<EditNameScreen> {
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
                   // This is where you might save the names or pass them back to a previous page
-                  Navigator.pop(
-                      context,
-                      _firstNameController.text +
-                          ' ' +
-                          _lastNameController.text);
+                  Navigator.pop(context,
+                      '${_firstNameController.text} ${_lastNameController.text}');
                 }
               },
             ),

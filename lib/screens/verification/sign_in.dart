@@ -1,7 +1,10 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
+import 'package:soko_v2/screens/dashboard/dashboard.dart';
+import 'package:soko_v2/screens/profile/set_up_interests.dart';
 import 'package:soko_v2/services/sign_in_with_google.dart';
 import 'package:soko_v2/widgets/primary_icon_filled_button.dart';
-import 'package:soko_v2/screens/profile/profile.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
@@ -39,11 +42,7 @@ class SignInScreen extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => ProfileScreen(
-                            name: userCredential.user!.displayName ??
-                                "No Name Provided",
-                            email: userCredential.user!.email!,
-                          ),
+                          builder: (context) => const SetUpInterestsScreen(),
                         ));
                   } else {
                     showDialog(
