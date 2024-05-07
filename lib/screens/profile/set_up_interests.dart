@@ -45,7 +45,7 @@ class _SetUpInterestPageState extends State<SetUpInterestScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading:  IconButton(
+        leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
             //Navigator.of(context).pop();
@@ -65,53 +65,64 @@ class _SetUpInterestPageState extends State<SetUpInterestScreen> {
         children: [
           const SizedBox(height: 96.0),
           Center(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Text(
-              'Select categories that interest you',
-              style: Theme.of(context).textTheme.headlineSmall,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Text(
+                'Tell us about your interests',
+                style: Theme.of(context).textTheme.headlineSmall,
+              ),
             ),
-          ),
           ),
           const SizedBox(height: 96.0),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Wrap(
-            spacing: 8.0,
-            runSpacing: 8.0,
-            children: interests.map((interest) {
-              return ChoiceChip(
-                label: Text(interest),
-                selected: isSelected(interest),
-                onSelected: (selected) {
-                  toggleInterest(interest);
-                },
-              );
-            }).toList(),
-          ),
+                spacing: 8.0,
+                runSpacing: 8.0,
+                children: interests.map((interest) {
+                  return ChoiceChip(
+                    label: Text(interest),
+                    selected: isSelected(interest),
+                    onSelected: (selected) {
+                      toggleInterest(interest);
+                    },
+                    backgroundColor: isSelected(interest)
+                        ? Theme.of(context).colorScheme.primary
+                        : Theme.of(context).colorScheme.secondary,
+                    selectedColor: Theme.of(context).colorScheme.primary,
+                  );
+                }).toList(),
+              ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 72.0),
             child: ElevatedButton(
               onPressed: selectedInterests.isNotEmpty
                   ? () {
                       Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const MainScreen()
-                      ),
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const MainScreen()),
                       );
                     }
                   : null,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: selectedInterests.isNotEmpty ? Theme.of(context).primaryColor:Theme.of(context).secondaryHeaderColor,
-                  ),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: selectedInterests.isNotEmpty
+                    ? Theme.of(context).colorScheme.primary
+                    : Theme.of(context).colorScheme.secondary,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(4.0),
+                    )
+              ),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 12.0),
               child: Text(
                 'Continue',
                 style: Theme.of(context).textTheme.headlineSmall,
-                ),
+              ),
+              ),
             ),
           ),
         ],
