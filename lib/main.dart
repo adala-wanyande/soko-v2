@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:soko_v2/screens/profile/set_up_interests.dart';
 import 'package:soko_v2/screens/verification/splash_screen.dart';
+import 'package:soko_v2/screens/profile/manage_interests.dart';
 import 'firebase_options.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -90,7 +91,7 @@ class MyApp extends StatelessWidget {
         ),
         scaffoldBackgroundColor: const Color(0xFFF6F5FF),
       ),
-      home: const SetUpInterestScreen(),
+      home: const SplashScreen(),
     );
   }
 }
