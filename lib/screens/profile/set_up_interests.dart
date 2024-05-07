@@ -45,18 +45,9 @@ class _SetUpInterestPageState extends State<SetUpInterestScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            //Navigator.of(context).pop();
-            //TODO: navigate back to previous page
-          },
-        ),
-        title: Center(
-          child: Text(
-            "Set Up Interests",
-            style: Theme.of(context).textTheme.headlineMedium,
-          ),
+        title: Text(
+          "Set Up Interests",
+          style: Theme.of(context).textTheme.headlineMedium,
         ),
       ),
       backgroundColor: Colors.white,
@@ -108,20 +99,23 @@ class _SetUpInterestPageState extends State<SetUpInterestScreen> {
                       );
                     }
                   : null,
+                  
               style: ElevatedButton.styleFrom(
-                backgroundColor: selectedInterests.isNotEmpty
-                    ? Theme.of(context).colorScheme.primary
-                    : Theme.of(context).colorScheme.secondary,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(4.0),
-                    )
-              ),
+                  backgroundColor: selectedInterests.isNotEmpty
+                      ? Theme.of(context).colorScheme.primary
+                      : Theme.of(context).colorScheme.secondary,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(4.0),
+                  )),
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 12.0),
-              child: Text(
-                'Continue',
-                style: Theme.of(context).textTheme.headlineSmall,
-              ),
+                child: Text(
+                  'Continue',
+                  style: Theme.of(context)
+                      .textTheme
+                      .headlineSmall!
+                      .copyWith(color: Colors.white),
+                ),
               ),
             ),
           ),
