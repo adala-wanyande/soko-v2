@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:soko_v2/screens/dashboard/dashboard.dart';
 import 'package:soko_v2/screens/profile/profile.dart';
 
 class ManageInterestScreen extends StatefulWidget {
@@ -46,11 +45,11 @@ class _ManageInterestPageState extends State<ManageInterestScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center( 
+        title: Center(
           child: Text(
             "Manage Interests",
             style: Theme.of(context).textTheme.headlineMedium,
-            ),
+          ),
         ),
       ),
       backgroundColor: Colors.white,
@@ -69,7 +68,7 @@ class _ManageInterestPageState extends State<ManageInterestScreen> {
           ),
           const SizedBox(height: 32.0),
           Expanded(
-          child: Padding(
+            child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -83,7 +82,7 @@ class _ManageInterestPageState extends State<ManageInterestScreen> {
                           style: Theme.of(context).textTheme.headlineSmall,
                         ),
                         const SizedBox(height: 8.0),
-                        Wrap( 
+                        Wrap(
                           spacing: 8.0,
                           runSpacing: 8.0,
                           children: selectedInterests.map((interest) {
@@ -124,22 +123,18 @@ class _ManageInterestPageState extends State<ManageInterestScreen> {
                     }
                   : null,
               style: ElevatedButton.styleFrom(
-                backgroundColor: selectedInterests.isNotEmpty
-                    ? Theme.of(context).colorScheme.primary
-                    : Theme.of(context).colorScheme.secondary,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(4.0),
-                    )
-              ),
+                  backgroundColor: selectedInterests.isNotEmpty
+                      ? Theme.of(context).colorScheme.primary
+                      : Theme.of(context).colorScheme.secondary,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(4.0),
+                  )),
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 12.0),
-              child: Text(
-                'Save',
-                style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                  color: Colors.white,
-                )
-                
-              ),
+                child: Text('Save',
+                    style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                          color: Colors.white,
+                        )),
               ),
             ),
           ),
@@ -147,7 +142,6 @@ class _ManageInterestPageState extends State<ManageInterestScreen> {
       ),
     );
   }
-
 
   Widget _buildInterestChip(String interest, bool selected) {
     return ChoiceChip(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:soko_v2/screens/profile/edit_profile.dart';
 import 'package:soko_v2/providers/auth_provider.dart';
+import 'package:soko_v2/screens/profile/manage_interests.dart';
 
 class ProfileScreen extends ConsumerWidget {
   const ProfileScreen({super.key});
@@ -48,7 +49,11 @@ class ProfileScreen extends ConsumerWidget {
                 }),
                 _divider(context),
                 _buildListTile(context, Icons.favorite, 'Manage Interests', () {
-                  // Navigate to Manage Interests Screen
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ManageInterestScreen()),
+                  );
                 }),
                 _divider(context),
                 _buildListTile(context, Icons.settings, 'Settings', () {
