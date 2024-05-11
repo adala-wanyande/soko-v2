@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:soko_v2/screens/profile/set_up_interests.dart';
-import 'package:soko_v2/screens/verification/splash_screen.dart';
-import 'package:soko_v2/screens/profile/manage_interests.dart';
 import 'firebase_options.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:soko_v2/screens/verification/splash_screen.dart';
 
 MaterialColor createMaterialColor(Color color) {
   Map<int, Color> colorMap = {
@@ -48,41 +46,38 @@ class MyApp extends StatelessWidget {
           secondary: const Color(0xFFF4C3C3),
         ),
         textTheme: TextTheme(
-          displayLarge: GoogleFonts.besley(
-            fontSize: 48.8,
+          headlineLarge: GoogleFonts.lato(
+            fontSize: 32,
+            fontWeight: FontWeight.bold,
+            color: primaryColor,
+          ),
+          headlineMedium: GoogleFonts.lato(
+            fontSize: 28,
             fontWeight: FontWeight.bold,
           ),
-          displayMedium: GoogleFonts.besley(
-            fontSize: 39.04,
+          headlineSmall: GoogleFonts.lato(
+            fontSize: 24,
             fontWeight: FontWeight.bold,
           ),
-          displaySmall: GoogleFonts.besley(
-            fontSize: 31.2,
-            fontWeight: FontWeight.bold,
-          ),
-          headlineMedium: GoogleFonts.besley(
-            fontSize: 24.96,
-            fontWeight: FontWeight.bold,
-          ),
-          headlineSmall: GoogleFonts.besley(
+          titleLarge: GoogleFonts.lato(
             fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
-          titleLarge: GoogleFonts.besley(
+          bodyLarge: GoogleFonts.roboto(
             fontSize: 16,
-            fontWeight: FontWeight.bold,
           ),
-          bodyLarge: GoogleFonts.robotoSerif(
-            fontSize: 24,
+          bodyMedium: GoogleFonts.roboto(
+            fontSize: 14,
           ),
-          bodyMedium: GoogleFonts.robotoSerif(
-            fontSize: 16, // default body text size
-            fontWeight: FontWeight.normal,
-          ),
-          bodySmall: GoogleFonts.robotoSerif(
+          bodySmall: GoogleFonts.roboto(
             fontSize: 12,
           ),
-          labelLarge: GoogleFonts.robotoSerif(
+          labelLarge: GoogleFonts.roboto(
+            fontSize: 14,
+            fontWeight: FontWeight.bold,
+          ),
+          labelSmall: GoogleFonts.roboto(
+            fontSize: 12,
             fontWeight: FontWeight.bold,
           ),
         ),
