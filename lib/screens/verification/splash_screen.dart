@@ -45,7 +45,7 @@ class _SplashScreenState extends State<SplashScreen> {
           const Center(
             child: CircleAvatar(
               radius: 150.0,
-              backgroundImage: AssetImage('lib/assets/SOKO-final logo.png'),
+              backgroundImage: AssetImage('assets/logos/soko.png'),
             ),
           ),
         ],
