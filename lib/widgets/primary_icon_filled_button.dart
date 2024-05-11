@@ -16,7 +16,9 @@ class PrimaryIconFilledButton extends StatelessWidget {
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         backgroundColor: Theme.of(context).colorScheme.primary,
-        shape: const StadiumBorder(),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(4.0),
+        ),
         padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
         foregroundColor: Colors.white, // Ensure foreground colors are white
       ),
