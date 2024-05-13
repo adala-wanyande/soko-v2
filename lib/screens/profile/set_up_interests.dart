@@ -72,13 +72,19 @@ class _SetUpInterestPageState extends State<SetUpInterestScreen> {
                 spacing: 8.0,
                 runSpacing: 8.0,
                 children: interests.map((interest) {
+                  bool selected = isSelected(interest);
                   return ChoiceChip(
-                    label: Text(interest),
-                    selected: isSelected(interest),
+                    label: Text(
+                      interest,
+                      style: TextStyle(
+                        color: selected ? Colors.white : Colors.black,
+                      ),
+                    ),
+                    selected: selected,
                     onSelected: (selected) {
                       toggleInterest(interest);
                     },
-                    backgroundColor: isSelected(interest)
+                    backgroundColor: selected
                         ? Theme.of(context).colorScheme.primary
                         : Theme.of(context).colorScheme.secondary,
                     selectedColor: Theme.of(context).colorScheme.primary,
@@ -99,7 +105,6 @@ class _SetUpInterestPageState extends State<SetUpInterestScreen> {
                       );
                     }
                   : null,
-                  
               style: ElevatedButton.styleFrom(
                   backgroundColor: selectedInterests.isNotEmpty
                       ? Theme.of(context).colorScheme.primary
@@ -111,10 +116,11 @@ class _SetUpInterestPageState extends State<SetUpInterestScreen> {
                 padding: const EdgeInsets.symmetric(vertical: 12.0),
                 child: Text(
                   'Continue',
-                  style: Theme.of(context)
-                      .textTheme
-                      .headlineSmall!
-                      .copyWith(color: Colors.white),
+                  style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                        color: selectedInterests.isNotEmpty
+                            ? Colors.white
+                            : Colors.black,
+                      ),
                 ),
               ),
             ),
