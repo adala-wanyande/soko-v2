@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:soko_v2/screens/profile/profile.dart';
 
@@ -5,12 +7,14 @@ class ManageInterestScreen extends StatefulWidget {
   const ManageInterestScreen({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
   _ManageInterestPageState createState() => _ManageInterestPageState();
 }
 
 class _ManageInterestPageState extends State<ManageInterestScreen> {
-  List<String> selectedInterests = [];
+  List<String> selectedInterests = [
+    'Fashion',
+    'Electronics'
+  ]; // Default selected interests
 
   List<String> interests = [
     "Fashion",
@@ -33,7 +37,7 @@ class _ManageInterestPageState extends State<ManageInterestScreen> {
 
   void toggleInterest(String interest) {
     setState(() {
-      if (selectedInterests.contains(interest)) {
+      if (isSelected(interest)) {
         selectedInterests.remove(interest);
       } else {
         selectedInterests.add(interest);
@@ -45,27 +49,12 @@ class _ManageInterestPageState extends State<ManageInterestScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child: Text(
-            "Manage Interests",
-            style: Theme.of(context).textTheme.headlineMedium,
-          ),
-        ),
+        title: const Text('Manage Interests'),
       ),
       backgroundColor: Colors.white,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          const SizedBox(height: 32.0),
-          Center(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Text(
-                'My interests',
-                style: Theme.of(context).textTheme.headlineSmall,
-              ),
-            ),
-          ),
           const SizedBox(height: 32.0),
           Expanded(
             child: Padding(
@@ -78,7 +67,7 @@ class _ManageInterestPageState extends State<ManageInterestScreen> {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         Text(
-                          'Selected Interests',
+                          'Your Selected Interests',
                           style: Theme.of(context).textTheme.headlineSmall,
                         ),
                         const SizedBox(height: 8.0),
@@ -89,20 +78,20 @@ class _ManageInterestPageState extends State<ManageInterestScreen> {
                             return _buildInterestChip(interest, true);
                           }).toList(),
                         ),
-                        const SizedBox(height: 16.0),
-                        const Divider(),
-                        const SizedBox(height: 16.0),
+                        const SizedBox(height: 24.0),
                       ],
                     ),
                   Text(
-                    'Choose more Interests',
+                    'Choose More Interests',
                     style: Theme.of(context).textTheme.headlineSmall,
                   ),
                   const SizedBox(height: 8.0),
                   Wrap(
                     spacing: 8.0,
                     runSpacing: 8.0,
-                    children: interests.map((interest) {
+                    children: interests
+                        .where((i) => !selectedInterests.contains(i))
+                        .map((interest) {
                       return _buildInterestChip(interest, false);
                     }).toList(),
                   ),
@@ -130,12 +119,15 @@ class _ManageInterestPageState extends State<ManageInterestScreen> {
                     borderRadius: BorderRadius.circular(4.0),
                   )),
               child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 12.0),
-                child: Text('Save',
+                  padding: const EdgeInsets.symmetric(vertical: 12.0),
+                  child: Text(
+                    'Save',
                     style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                          color: Colors.white,
-                        )),
-              ),
+                          color: selectedInterests.isNotEmpty
+                              ? Colors.white
+                              : Colors.black,
+                        ),
+                  )),
             ),
           ),
         ],
@@ -145,7 +137,12 @@ class _ManageInterestPageState extends State<ManageInterestScreen> {
 
   Widget _buildInterestChip(String interest, bool selected) {
     return ChoiceChip(
-      label: Text(interest),
+      label: Text(
+        interest,
+        style: TextStyle(
+          color: selected ? Colors.white : Colors.black,
+        ),
+      ),
       selected: selected,
       onSelected: (isSelected) {
         toggleInterest(interest);
