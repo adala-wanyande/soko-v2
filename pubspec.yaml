@@ -2,7 +2,7 @@ name: soko_v2
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.3.4 <4.0.0'
+  sdk: ">=3.3.4 <4.0.0"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -31,7 +31,6 @@ dependencies:
   flutter:
     sdk: flutter
 
-
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
@@ -41,6 +40,8 @@ dependencies:
   google_fonts: ^6.2.1
   riverpod: ^2.5.1
   flutter_riverpod: ^2.5.1
+  carousel_slider: ^4.2.1
+  dots_indicator: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -58,7 +59,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -66,8 +66,23 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-   - lib/assets/SOKO-final logo.png
-  #   - images/a_dot_ham.jpeg
+    - assets/logos/soko.png
+    - assets/logos/gleam_boutique.png
+    - assets/logos/harvest_bliss.png
+    - assets/logos/luminous_glow.png
+    - assets/logos/smoky_trails.jpg
+    - assets/logos/urban_oasis.jpg
+    - assets/logos/urban_threads.png
+    - assets/logos/velocity_gear.png
+    - assets/logos/vital_bloom.png
+    - assets/logos/logo_1.jpg
+    - assets/logos/logo_2.jpg
+    - assets/logos/vitacare_pharmacy.jpg
+    - assets/categories/home.jpg
+    - assets/categories/entertainment.jpg
+    - assets/categories/food.jpg
+    - assets/categories/services.jpg
+    - assets/categories/all.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
