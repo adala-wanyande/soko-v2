@@ -1,11 +1,68 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:soko_v2/screens/profile/edit_profile.dart';
-import 'package:soko_v2/providers/auth_provider.dart';
 import 'package:soko_v2/screens/profile/manage_interests.dart';
+import 'package:soko_v2/providers/auth_provider.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:soko_v2/screens/verification/sign_in.dart';
 
 class ProfileScreen extends ConsumerWidget {
   const ProfileScreen({super.key});
+
+  void _signOut(BuildContext context) async {
+    try {
+      await FirebaseAuth.instance.signOut();
+      Navigator.of(context).pushAndRemoveUntil(
+        MaterialPageRoute(builder: (context) => const SignInScreen()),
+        (Route<dynamic> route) => false,
+      );
+    } catch (e) {
+      showDialog(
+        context: context,
+        builder: (ctx) => AlertDialog(
+          title: const Text('Logout Error'),
+          content: Text('Failed to log out: $e'),
+          actions: <Widget>[
+            TextButton(
+              child: const Text('OK'),
+              onPressed: () {
+                Navigator.of(ctx).pop();
+              },
+            ),
+          ],
+        ),
+      );
+    }
+  }
+
+  void _showSignOutDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Log Out'),
+          content: const Text('Are you sure you want to log out?'),
+          actions: <Widget>[
+            TextButton(
+              child: const Text('No'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            TextButton(
+              child: const Text('Yes'),
+              onPressed: () {
+                Navigator.of(context).pop(); // Close the dialog first
+                _signOut(context);
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -41,19 +98,17 @@ class ProfileScreen extends ConsumerWidget {
                 _buildListTile(context, Icons.person, 'Personal Information',
                     () {
                   Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>
-                            EditProfileScreen(name: name, email: email)),
-                  );
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              EditProfileScreen(name: name, email: email)));
                 }),
                 _divider(context),
                 _buildListTile(context, Icons.favorite, 'Manage Interests', () {
                   Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const ManageInterestScreen()),
-                  );
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ManageInterestScreen()));
                 }),
                 _divider(context),
                 _buildListTile(context, Icons.settings, 'Settings', () {
@@ -61,7 +116,7 @@ class ProfileScreen extends ConsumerWidget {
                 }),
                 _divider(context),
                 _buildListTile(context, Icons.logout, 'Log Out', () {
-                  // Log out logic
+                  _showSignOutDialog(context);
                 }),
               ],
             ),

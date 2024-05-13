@@ -62,38 +62,3 @@ class SignInScreen extends StatelessWidget {
     );
   }
 }
-
-// class HomePage extends StatelessWidget {
-//   final String email;
-
-//   const HomePage({super.key, required this.email});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: const Text('Welcome'),
-//       ),
-//       body: Container(
-//         decoration: BoxDecoration(
-//           gradient: LinearGradient(
-//             begin: Alignment.topCenter,
-//             end: Alignment.bottomCenter,
-//             stops: const [0.12, 1.0],
-//             colors: [
-//               const Color(0xFFF4C3C3).withOpacity(0.46),
-//               const Color(0xFFF4C3C3).withOpacity(1.0),
-//             ],
-//           ),
-//         ),
-//         child: Center(
-//           child: Text(
-//             'Hello $email, you have been successfully logged in',
-//             style: const TextStyle(fontSize: 20),
-//             textAlign: TextAlign.center,
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
