@@ -29,8 +29,8 @@ class SignInScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               const Text(
-                'Welcome to SOKO',
-                style: TextStyle(fontSize: 48.8, fontWeight: FontWeight.w900),
+                'Get Started With SOKO',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 300),
