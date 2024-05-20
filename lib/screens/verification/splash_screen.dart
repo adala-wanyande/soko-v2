@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:soko_v2/screens/verification/get_started.dart';
 import 'dart:async';
-import 'package:soko_v2/screens/verification/sign_in.dart';
+// import 'package:soko_v2/screens/verification/sign_in.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -20,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
       () => Navigator.of(context).pushReplacement(
         MaterialPageRoute(
           builder: (BuildContext context) =>
-              const SignInScreen(), // Navigate to SignIn screen
+              const GetStartedScreen(), // Navigate to SignIn screen
         ),
       ),
     );
