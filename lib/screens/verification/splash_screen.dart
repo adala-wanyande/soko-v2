@@ -35,12 +35,11 @@ class _SplashScreenState extends State<SplashScreen> {
         children: <Widget>[
           Container(
             decoration: const BoxDecoration(
-              gradient: RadialGradient(
-                  colors: [Color(0xfff4c3c3), Color(0xffff0080)],
-                  center: Alignment.center,
-                  radius: 1.0,
-                  stops: [0.4, 1.0],
-                  tileMode: TileMode.clamp),
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [Color(0xfff4c3c3), Color(0xffff0080)],
+              ),
             ),
           ),
           const Center(
