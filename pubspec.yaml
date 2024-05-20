@@ -42,6 +42,7 @@ dependencies:
   flutter_riverpod: ^2.5.1
   carousel_slider: ^4.2.1
   dots_indicator: ^3.0.0
+  flutter_svg: ^2.0.10+1
 
 dev_dependencies:
   flutter_test:
@@ -83,6 +84,10 @@ flutter:
     - assets/categories/food.jpg
     - assets/categories/services.jpg
     - assets/categories/all.jpg
+    - assets/verification/get_started_1.png
+    - assets/verification/get_started_2.png
+    - assets/verification/get_started_3.png
+    - assets/verification/get_started_bg_1.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
