@@ -43,6 +43,11 @@ dependencies:
   carousel_slider: ^4.2.1
   dots_indicator: ^3.0.0
   flutter_svg: ^2.0.10+1
+  flip_card: ^0.7.0
+  share_plus: ^9.0.0
+  video_player: ^2.8.6
+  # qr_code_scanner: ^1.0.1
+  # geolocator: ^12.0.0
 
 dev_dependencies:
   flutter_test:
@@ -88,6 +93,15 @@ flutter:
     - assets/verification/get_started_2.png
     - assets/verification/get_started_3.png
     - assets/verification/get_started_bg_1.png
+    - assets/stores/lc_waikiki.png
+    - assets/stores/mr_price.png
+    - assets/stores/north_face.png
+    - assets/stores/carrefour.png
+    - assets/challenges/lc_waikiki.png
+    - assets/challenges/mr_price.mp4
+    # - assets/challenges/mr_price.png
+    # - assets/challenges/north_face.png
+    # - assets/challenges/carrefour.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

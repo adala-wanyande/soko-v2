@@ -27,30 +27,34 @@ class ChallengesScreen extends StatelessWidget {
               child: Row(
                 children: [
                   buildChallengeCard(
+                    'LC Waikiki',
+                    'Image Challenge',
+                    'Get a 50% discount lorem ipsum yappa',
+                    'assets/stores/lc_waikiki.png', // Example image path
+                    context,
+                  ),
+                  const SizedBox(width: 8),
+                  buildChallengeCard(
+                    'The North Face',
+                    'Location Challenge',
+                    'Get 5% off your next purchase lorem ipsum yappa',
+                    'assets/stores/north_face.png', // Example image path
+                    context,
+                  ),
+                  const SizedBox(width: 8),
+                  buildChallengeCard(
+                    'Mr Price',
+                    'Video Challenge',
+                    'Complete this video challenge to get discount yappa yappa yappa',
+                    'assets/stores/mr_price.png', // Example image path
+                    context,
+                  ),
+                  const SizedBox(width: 8),
+                  buildChallengeCard(
                     'Carrefour',
-                    'QR code challenge',
-                    '10% discount on groceries lorem lorem lorem',
-                    context,
-                  ),
-                  const SizedBox(width: 8),
-                  buildChallengeCard(
-                    'Java House',
-                    'Social media challenge',
-                    'Free coffee with any pastry lorem lorem lorem',
-                    context,
-                  ),
-                  const SizedBox(width: 8),
-                  buildChallengeCard(
-                    'Chandarana Foodplus',
-                    'Photo challenge',
-                    '15% discount on fruits and vegetables lorem lorem lorem',
-                    context,
-                  ),
-                  const SizedBox(width: 8),
-                  buildChallengeCard(
-                    'Tuskys Supermarket',
-                    'Video challenge',
-                    '20% discount on electronics lorem lorem lorem',
+                    'QR Code Challenge',
+                    'Complete this QR Code challenge to get discount yappa yappa yappa',
+                    'assets/stores/carrefour.png', // Example image path
                     context,
                   ),
                 ],
