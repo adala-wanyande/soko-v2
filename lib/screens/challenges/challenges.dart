@@ -107,23 +107,26 @@ class ChallengesScreen extends StatelessWidget {
               child: Row(
                 children: [
                   buildCompletedCard(
-                    'Carrefour',
-                    'Scan QR code',
-                    '10% discount on electronics lorem lorem lorem',
+                    'The North Face',
+                    'Location Challenge',
+                    'Get 5% off your next purchase lorem ipsum yappa',
+                    'assets/stores/north_face.png',
                     context,
                   ),
                   const SizedBox(width: 8),
                   buildCompletedCard(
-                    'Woolworths',
-                    'Video challenge',
-                    '20% discount on clothing lorem lorem lorem',
+                    'Mr Price',
+                    'Video Challenge',
+                    'Complete this video challenge to get discount yappa yappa yappa',
+                    'assets/stores/mr_price.png', // Example image path
                     context,
                   ),
                   const SizedBox(width: 8),
                   buildCompletedCard(
-                    'Text Book Centre',
-                    'Photo challenge',
-                    '15% discount on stationery lorem lorem lorem',
+                    'LC Waikiki',
+                    'Image Challenge',
+                    'Get a 50% discount lorem ipsum yappa',
+                    'assets/stores/lc_waikiki.png',
                     context,
                   ),
                 ],
