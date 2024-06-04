@@ -100,7 +100,7 @@ flutter:
     - assets/challenges/lc_waikiki.png
     - assets/challenges/mr_price.mp4
     # - assets/challenges/mr_price.png
-    # - assets/challenges/north_face.png
+    - assets/challenges/the_north_face.png
     # - assets/challenges/carrefour.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
