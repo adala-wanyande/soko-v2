@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:soko_v2/screens/verification/splash_screen.dart';
+import 'package:soko_v2/screens/challenges/challenges.dart';
 
 MaterialColor createMaterialColor(Color color) {
   Map<int, Color> colorMap = {

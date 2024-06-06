@@ -33,8 +33,14 @@ Widget buildCompletedCard(String title, String subtitle, String description,
         child: Column(
           children: [
             Container(
-              height: 160,
-              color: Colors.black,
+              height: 200,
+              width: 200,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(imagePath),
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
