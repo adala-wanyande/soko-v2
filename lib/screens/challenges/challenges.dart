@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:soko_v2/widgets/progress_card.dart';
-import 'package:soko_v2/widgets/challenge_card.dart';
+//import 'package:soko_v2/widgets/challenge_card.dart';
 import 'package:soko_v2/widgets/completed_card.dart';
 
 class ChallengesScreen extends StatelessWidget {
@@ -18,48 +18,10 @@ class ChallengesScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Challenges for you',
+              'Your Challenges',
               style: Theme.of(context).textTheme.headlineSmall,
             ),
-            const SizedBox(height: 16),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                  buildChallengeCard(
-                    'LC Waikiki',
-                    'Image Challenge',
-                    'Get a 50% discount lorem ipsum yappa',
-                    'assets/stores/lc_waikiki.png', // Example image path
-                    context,
-                  ),
-                  const SizedBox(width: 8),
-                  buildChallengeCard(
-                    'The North Face',
-                    'Location Challenge',
-                    'Get 5% off your next purchase lorem ipsum yappa',
-                    'assets/stores/north_face.png', // Example image path
-                    context,
-                  ),
-                  const SizedBox(width: 8),
-                  buildChallengeCard(
-                    'Mr Price',
-                    'Video Challenge',
-                    'Complete this video challenge to get discount yappa yappa yappa',
-                    'assets/stores/mr_price.png', // Example image path
-                    context,
-                  ),
-                  const SizedBox(width: 8),
-                  buildChallengeCard(
-                    'Carrefour',
-                    'QR Code Challenge',
-                    'Complete this QR Code challenge to get discount yappa yappa yappa',
-                    'assets/stores/carrefour.png', // Example image path
-                    context,
-                  ),
-                ],
-              ),
-            ),
+            
             const SizedBox(height: 32),
             Text(
               'In progress',
