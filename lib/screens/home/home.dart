@@ -8,17 +8,12 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Home Screen'),
+          title: const Text('Discover Campaigns'),
         ),
         body: SingleChildScrollView(
             padding: const EdgeInsets.all(16.0),
             child:
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Text(
-                'Discover Challenges',
-                style: Theme.of(context).textTheme.headlineSmall,
-              ),
-              const SizedBox(height: 32),
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Column(
@@ -63,6 +58,9 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
               ),
-            ])));
+            ]
+          )
+      )
+    );
   }
 }
